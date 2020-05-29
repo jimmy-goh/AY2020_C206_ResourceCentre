@@ -22,3 +22,5 @@ jobs:
         java-version: 1.8
     - name: Build with Ant
       run: ant -noinput -buildfile ResourceCentre/build.xml
+    - name: Test Execution
+      run: java -cp bin ResourceCentre
