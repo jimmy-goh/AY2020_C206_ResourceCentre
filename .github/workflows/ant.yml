@@ -23,4 +23,4 @@ jobs:
     - name: Build with Ant
       run: ant -noinput -buildfile ResourceCentre/build.xml
     - name: Test Execution
-      run: java -cp bin ResourceCentre
+      run: java -cp ResourceCentre/bin ResourceCentre
