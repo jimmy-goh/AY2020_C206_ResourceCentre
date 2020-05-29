@@ -3,11 +3,12 @@
 import java.util.*;
 
 public class Helper {
-
-  @SuppressWarnings("resource")
+  
+  static Scanner scan = new java.util.Scanner(System.in);
+  
   public static String readString(String prompt) {
     System.out.print(prompt);
-    return new java.util.Scanner(System.in).nextLine();
+    return scan.nextLine();
   }
 
   public static int readInt(String prompt) {
