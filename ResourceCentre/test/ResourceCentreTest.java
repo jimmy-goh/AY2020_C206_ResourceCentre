@@ -29,17 +29,7 @@ public class ResourceCentreTest {
 		chromebookList= new ArrayList<Chromebook>();
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		cc1 = null;
-		cc2 = null;
-		cb1 = null;
-		cb2 = null;
-		camcorderList = null;
-		chromebookList = null;
-
-	}
-
+	
 	@Test
 	public void addCamcorderTest() {
 
@@ -52,4 +42,87 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Check that Camcorder arraylist size is 2", 2, camcorderList.size());
 	}
+	@Test
+	public void addChromebookTest() {
+		//fail("Not yet implemented");
+	}
+	
+	@Test
+	public void retrieveAllCamcorderTest() {
+
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		assertEquals("Check that Camcorder arraylist size is 2", 2, camcorderList.size());
+		
+		String allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
+		String testOutput = String.format("%-10s %-20s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION", 
+				"AVAILABLE", "DUE DATE","OPTICAL ZOOM");
+		testOutput += String.format("%-10s %-20s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput += String.format("%-10s %-20s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
+	
+		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
+		
+	}
+	@Test
+	public void retrieveAllChrombookTest() {
+		//fail("Not yet implemented");
+	}
+
+	@Test
+	public void doLoanCamcorderTest() {
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		
+		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020" );
+		assertTrue("Check that item is ok to loan?", ok);		
+		
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020" );
+		assertFalse("Check that item is ok to loan?", ok);
+		
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020" );
+		assertFalse("Check that item is ok to loan?", ok);
+		
+	}
+	
+	@Test
+	public void doLoanChromebookTest() {
+		//fail("Not yet implemented");
+	}
+	
+	@Test
+	public void doReturnCamcorderTest() {
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		
+		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
+		assertFalse("Check that item is returned?", isReturned);		
+		
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		assertTrue("Check that item is returned", isReturned);
+		
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+		assertFalse("Check that item is returned?", isReturned);
+		
+	}
+	@Test
+	public void doReturnChromebookTest() {
+		//fail("Not yet implemented");
+	}
+	
+	@After
+	public void tearDown() throws Exception {
+		cc1 = null;
+		cc2 = null;
+		cb1 = null;
+		cb2 = null;
+		camcorderList = null;
+		chromebookList = null;
+
+	}
+
 }
