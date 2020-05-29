@@ -15,6 +15,9 @@ public class ResourceCentreTest {
 	private ArrayList<Camcorder> camcorderList;
 	private ArrayList<Chromebook> chromebookList;
 	
+	public ResourceCentreTest() {
+		super();
+	}
 	@Before
 	public void setUp() throws Exception {
 		cc1 = new Camcorder("CC0011", "Nikon HDSLR", 40);
@@ -34,6 +37,7 @@ public class ResourceCentreTest {
 		cb2 = null;
 		camcorderList = null;
 		chromebookList = null;
+
 	}
 
 	@Test
@@ -48,5 +52,4 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Check that Camcorder arraylist size is 2", 2, camcorderList.size());
 	}
-
 }
