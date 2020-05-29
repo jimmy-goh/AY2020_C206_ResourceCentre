@@ -33,7 +33,7 @@ public class ResourceCentre {
 				if (itemType == 1) {
 
 					// Add camcorder
-					Camcorder cc = inputCamcorder();
+					Camcorder cc = ResourceCentre.inputCamcorder();
 					ResourceCentre.addCamcorder(camcorderList, cc);
 					//ResourceCentre.addCamcorder(camcorderList);
 
