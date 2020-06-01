@@ -60,7 +60,7 @@
     </target>
     <target name="ResourceCentreTest">
         <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
+        <junit fork="yes" printsummary="yes" haltonfailure="yes">
             <formatter type="xml"/>
             <test name="ResourceCentreTest" todir="${junit.output.dir}"/>
             <classpath refid="ResourceCentre.classpath"/>

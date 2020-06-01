@@ -188,6 +188,7 @@ public class ResourceCentre {
 	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
 		
 		camcorderList.add(cc);
+		camcorderList.add(cc);
 		System.out.println("Camcorder added");
 	}
 	
