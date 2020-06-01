@@ -10,8 +10,8 @@
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
     <path id="JUnit 4.libraryclasspath">
-        <pathelement location="JUnit 4/junit.jar"/>
-    	<pathelement location="JUnit 4/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+        <pathelement location="ant/junit.jar"/>
+    	<pathelement location="ant/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <path id="ResourceCentre.classpath">
         <pathelement location="bin"/>
