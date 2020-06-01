@@ -23,7 +23,7 @@ jobs:
     - name: Build with Ant
       run: ant -noinput -buildfile ResourceCentre/build.xml
     - name: Compile JUnit Test
-      run: javac -cp ResourceCentre/bin:ResourceCentre/ant/junit.jar ResourceCentre/test/ResourceCentreTest.java -d ResourceCentre/bin
+      run: javac -cp ResourceCentre/bin:ResourceCentre/ant/junit.jar:ResourceCentre/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre/test/ResourceCentreTest.java -d ResourceCentre/bin
     - name: Run JUnit test
       run: java -jar ResourceCentre/ant/junit.jar --classpath ResourceCentre/bin --scan-class-path 
     - name: Test Execution
