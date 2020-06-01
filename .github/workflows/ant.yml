@@ -25,6 +25,6 @@ jobs:
     - name: Compile JUnit Test
       run: javac -cp ResourceCentre/bin:ResourceCentre/ant/junit.jar:ResourceCentre/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre/test/ResourceCentreTest.java -d ResourceCentre/bin
     - name: Run JUnit test
-      run: java -jar ResourceCentre/ant/junit.jar --classpath ResourceCentre/bin --scan-class-path 
+      run: java -jar ResourceCentre/ant/org.hamcrest.core_1.3.0.v201303031735.jar --classpath ResourceCentre/bin --scan-class-path 
     - name: Test Execution
       run: java -cp ResourceCentre/bin ResourceCentre < ResourceCentre/user_input.txt
